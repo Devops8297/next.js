@@ -2,7 +2,9 @@ version: 0.0
 os: linux
 
 files:
-  - source: scripts
+  - source: install_docker.sh
+    destination: /opt/scripts
+  - source: start_docker.sh
     destination: /opt/scripts
 
 hooks:
