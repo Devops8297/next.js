@@ -3,10 +3,10 @@ os: linux
 
 files:
   - source: start-docker.sh
-    destination: /opt/start-docker.sh
+    destination: /opt/start_docker.sh
 
 hooks:
   ApplicationStart:
-    - location: /opt/start-docker.sh
+    - location: /opt/start_docker.sh
       timeout: 300
       runas: root
