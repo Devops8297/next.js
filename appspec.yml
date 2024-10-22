@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: start-docker.sh
+  - source: start_docker.sh
     destination: /opt/start_docker.sh
 
 hooks:
