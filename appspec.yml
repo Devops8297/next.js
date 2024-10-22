@@ -2,17 +2,10 @@ version: 0.0
 os: linux
 
 files:
-  - source: install_docker.sh
-    destination: /opt/scripts
   - source: start_docker.sh
     destination: /opt/scripts
 
 hooks:
-  AfterInstall:
-    - location: /opt/scripts/install_docker.sh
-      timeout: 300
-      runas: root
-
   ApplicationStart:
     - location: /opt/scripts/start_docker.sh
       timeout: 300
