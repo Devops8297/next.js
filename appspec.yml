@@ -6,6 +6,13 @@ files:
     destination: /opt/start_docker.sh
 
 hooks:
+  AfterInstall:
+    - location: /opt/start_docker.sh
+      timeout: 300
+      runas: root
+      commands:
+        - chmod +x /opt/start_docker.sh
+
   ApplicationStart:
     - location: /opt/start_docker.sh
       timeout: 300
