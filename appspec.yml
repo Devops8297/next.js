@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 
 files:
-  - source: start_docker.sh
-    destination: /opt/scripts
+  - source: start-docker.sh
+    destination: /opt/start-docker.sh
 
 hooks:
   ApplicationStart:
-    - location: /opt/scripts/start_docker.sh
+    - location: /opt/start-docker.sh
       timeout: 300
       runas: root
