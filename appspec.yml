@@ -6,6 +6,16 @@ files:
     destination: /opt
 
 hooks:
+  BeforeInstall:
+    - location: /bin/bash
+      timeout: 300
+      runas: root
+      # Remove the file if it already exists
+      script: |
+        if [ -f /opt/start_docker.sh ]; then
+          rm /opt/start_docker.sh
+        fi
+
   AfterInstall:
     - location: /opt/start_docker.sh
       timeout: 300
