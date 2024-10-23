@@ -3,23 +3,22 @@ os: linux
 
 files:
   - source: start_docker.sh
-    destination: /opt/start_docker.sh
+    destination: opt/start_docker.sh  # Removed the leading slash
 
 hooks:
   BeforeInstall:
-    - location: /opt/start_docker.sh
+    - location: opt/start_docker.sh
       timeout: 300
       runas: root
-      # If you still want to remove the existing start_docker.sh file
       commands:
         - if [ -f /opt/start_docker.sh ]; then rm /opt/start_docker.sh; fi
 
   AfterInstall:
-    - location: /opt/start_docker.sh
+    - location: opt/start_docker.sh
       timeout: 300
       runas: root
 
   ApplicationStart:
-    - location: /opt/start_docker.sh
+    - location: opt/start_docker.sh
       timeout: 300
       runas: root
