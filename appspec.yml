@@ -7,10 +7,9 @@ files:
 
 hooks:
   BeforeInstall:
-    # Remove the existing start_docker.sh if it exists before copying the new one
-    - location: /bin/bash
-      timeout: 300
+    - timeout: 300
       runas: root
+      # Remove the existing start_docker.sh if it exists before copying the new one
       script: |
         if [ -f /opt/start_docker.sh ]; then
           rm /opt/start_docker.sh
