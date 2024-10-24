@@ -1,10 +1,6 @@
 version: 0.0
 os: linux
 
-files:
-  - source: start_docker.sh
-    destination: /opt
-
 hooks:
   AfterInstall:
     - location: /opt/start_docker.sh
